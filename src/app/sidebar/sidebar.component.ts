@@ -17,7 +17,8 @@ export const ROUTES: RouteInfo[] = [
     { path: './table',         title: 'Table List',        icon:'nc-tile-56',    class: '' },
     { path: './typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
     { path: './upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
-    { path: './registro',       title: 'Visualizza registro',    icon:'nc-tile-56',  class: '' }
+    { path: './registro',      title: 'Visualizza registro',    icon:'nc-tile-56',  class: '' },
+    { path: './excel',         title: 'Metodi excel',             icon:'nc-tile-56',    class: '' }
 
 ];
 

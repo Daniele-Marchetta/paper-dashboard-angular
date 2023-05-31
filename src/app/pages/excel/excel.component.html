@@ -1,0 +1,45 @@
+<div *ngIf="true">Lurido pezzo di meridionale</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Metodi Excel</h5>
+        <div *ngIf="true"> ciao</div>
+        <p class="card-category">
+          Collezione di api riguardanti upload e download di excel
+        </p>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card card-plain">
+              <div class="card-header">
+                <h5 class="card-title">Download</h5>
+              </div>
+              <div class="card-body">
+                <div class="d-grid gap-2">
+                  <button type="button" (click)="handleButtonClick()" class="btn btn-primary">Download excel delle righe di registro con tutte le informazioni anche su persone, attività etc. </button>
+                  <div *ngIf="isButtonClicked"> <p>ciao</p></div>
+                  <button type="button" (click)="handleButtonClick()" class="btn btn-primary">Download excel di tutte le certificazioni di un certo vendor completate da tutti i dipedenti</button>
+                  <div *ngIf="true"> ciao</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-plain">
+              <div class="card-header">
+                <h5 class="card-title">Upload</h5>
+              </div>
+              <div class="card-body">
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-primary">Download excel delle righe di registro con tutte le informazioni anche su persone, attività etc. </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
