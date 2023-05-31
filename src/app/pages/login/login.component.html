@@ -1,5 +1,6 @@
 
 <div class="d-flex align-items-center vh-100 bg-grey">
+
 <div class="container">
   <div class="col-md-6 col-auto mx-auto">
   <div class="card ">
@@ -14,7 +15,7 @@
         <span>
           <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
       </div>
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
         <div class="row">
           <div class="col ">
