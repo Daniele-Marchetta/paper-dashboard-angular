@@ -51,6 +51,7 @@
             <a ngbDropdownItem href="javascript:void(0)">Something else here</a>
           </div>
         </li>
+
         <li class="nav-item">
           <a class="nav-link btn-rotate" href="javascript:void(0)">
             <i class="nc-icon nc-settings-gear-65"></i>
@@ -58,6 +59,19 @@
               <span class="d-lg-none d-md-block">Account</span>
             </p>
           </a>
+        </li>
+
+        <li class="nav-item btn-rotate" ngbDropdown placement="bottom-left">
+          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLinkProfile" >
+            <i class="nc-icon nc-satisfied"></i>
+            <p>
+              <span class="d-lg-none d-md-block">Account</span>
+            </p>
+          </a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLinkProfile" class="dropdown-menu dropdown-menu-right">
+            <a ngbDropdownItem href="javascript:void(0)">Profilo</a>
+            <a ngbDropdownItem href="javascript:void(0)">Logout</a>
+          </div>
         </li>
       </ul>
     </div>
