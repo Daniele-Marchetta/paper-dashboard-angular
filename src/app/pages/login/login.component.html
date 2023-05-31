@@ -15,7 +15,7 @@
         <span>
           <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
       </div>
-      <form >
+      <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
         <div class="row">
           <div class="col ">

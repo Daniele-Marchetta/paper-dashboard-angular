@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AdminLayoutRoutes } from './admin-layout.routing';
 
@@ -16,13 +16,20 @@ import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExcelComponent } from 'app/pages/excel/excel.component';
 import { RegistroComponent } from 'app/pages/registro/registro.component';
+import { LoginComponent } from 'app/pages/login/login.component';
+import { RegisterComponent } from 'app/pages/register/register.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptorService } from 'app/services/token-interceptor.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   declarations: [
     DashboardComponent,
@@ -34,8 +41,10 @@ import { RegistroComponent } from 'app/pages/registro/registro.component';
     MapsComponent,
     NotificationsComponent,
     ExcelComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent,
+    RegisterComponent
   ]
-})
+  })
 
 export class AdminLayoutModule {}
