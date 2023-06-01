@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { authGuard } from './guards/auth-guard.guard';
 
 export const AppRoutes: Routes = [
   {
@@ -12,6 +13,7 @@ export const AppRoutes: Routes = [
   }, {
     path: 'home',
     component: AdminLayoutComponent,
+    canActivate:[authGuard],
     children: [
         {
       path: '',

@@ -28,7 +28,7 @@ export class LoginComponent{
   });
 
    onSubmit(){
-    console.log(this.loginForm)
+    console.log(this.loginForm.value.email)
     const obj:loginRequest = {
       email: this.loginForm.value.email!,
       password: this.loginForm.value.password!
@@ -36,6 +36,7 @@ export class LoginComponent{
     this.doLogin(obj);
 
   }
+
 
   doLogin(credentials:loginRequest){
     this.isloading=true;
