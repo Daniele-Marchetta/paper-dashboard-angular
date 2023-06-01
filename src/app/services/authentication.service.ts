@@ -33,17 +33,19 @@ export class AuthService {
       .pipe(catchError(this.handleError));
   }
 
+  logout() {
+    return this.http
+      .post(logoutUrl, '')
+      .pipe(catchError(this.handleError));
+  }
+
   setToken(token: string) {
     localStorage.setItem('token', token);
   }
   getToken(): string {
     return localStorage.getItem('token') || '';
   }
-  logout() {
-    return this.http
-      .post(logoutUrl, '')
-      .pipe(catchError(this.handleError));
-  }
+
 
   isloggedIn(): boolean {
     const token: string = this.getToken();
