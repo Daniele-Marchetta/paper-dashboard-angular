@@ -8,8 +8,8 @@ import {
 } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { loginUrl, logoutUrl } from 'app/endPoints';
-import { authResponse, loginRequest } from 'app/interfaces/authentication';
+import { loginUrl, logoutUrl, registerUrl } from 'app/endPoints';
+import { authResponse, loginRequest, registerRequest } from 'app/interfaces/authentication';
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +24,12 @@ export class AuthService {
   authenticate(obj: loginRequest) {
     return this.http
       .post<authResponse>(loginUrl, obj, { observe: 'response' })
+      .pipe(catchError(this.handleError));
+  }
+
+  register(obj: registerRequest) {
+    return this.http
+      .post<authResponse>(registerUrl, obj, { observe: 'response' })
       .pipe(catchError(this.handleError));
   }
 

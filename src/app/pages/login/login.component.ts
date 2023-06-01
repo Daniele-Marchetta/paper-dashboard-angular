@@ -57,7 +57,7 @@ export class LoginComponent{
       complete: ()=>{
         this.isloading=false;
         this.loginError=''
-        this.router.navigateByUrl("/home")
+        this.router.navigateByUrl("/home/registro")
       }
     }
     )
