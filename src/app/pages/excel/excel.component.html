@@ -20,6 +20,7 @@
                   <div *ngIf="isButtonClicked"> <p>ciao</p></div>
                   <button type="button" (click)="handleButtonClick()" class="btn btn-primary">Download excel di tutte le certificazioni di un certo vendor completate da tutti i dipedenti</button>
                   <div *ngIf="isButtonClicked"> ciao</div>
+                  <button  *ngIf="isButtonClicked" class="btn btn-primary" (click)="downloadExcel()">Scarica Excel</button>
                 </div>
               </div>
             </div>
