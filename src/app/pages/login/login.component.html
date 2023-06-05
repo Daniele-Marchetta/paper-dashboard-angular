@@ -11,7 +11,7 @@
         </div>
         <div class="card-body">
           <div class="alert alert-danger alert-dismissible fade show" *ngIf="loginError!=''">
-            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close" >
+            <button (click)="loginError=''" type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close" >
               <i class="nc-icon nc-simple-remove"></i>
             </button>
             <span>
@@ -25,6 +25,9 @@
                   <input type="email" class="form-control" placeholder="Email"
                   [class]="this.loginForm.controls.email.touched && this.loginForm.controls.email.invalid?'form-control border-danger':'form-control'"
                   formControlName="email">
+                  <div class="alert alert-danger my-2" *ngIf="this.loginForm.controls.email.touched && this.loginForm.controls.email.invalid">
+                    <span>{{getMailErrorMessage()}}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -37,12 +40,15 @@
                   [class]="this.loginForm.controls.password.touched && this.loginForm.controls.password.invalid?'form-control border-danger':'form-control'"
                   formControlName="password">
                 </div>
+                <div class="alert alert-danger my-2" *ngIf="this.loginForm.controls.password.touched && this.loginForm.controls.password.invalid">
+                  <span>{{getPasswordErrorMessage()}}</span>
+                </div>
               </div>
             </div>
 
             <div class="row">
               <div class=" ml-auto mr-auto my-auto">
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button [type]="this.loginForm.valid?'submit':'button'" [disabled]="this.loginForm.valid?false:true" class="btn btn-primary">Login</button>
               </div>
             </div>
 

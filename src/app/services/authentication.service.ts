@@ -8,8 +8,8 @@ import {
 } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { loginUrl, logoutUrl } from 'app/endPoints';
-import { authResponse, loginRequest } from 'app/interfaces/authentication';
+import { loginUrl, logoutUrl, registerUrl } from 'app/endPoints';
+import { authResponse, loginRequest, registerRequest } from 'app/interfaces/authentication';
 
 @Injectable({
   providedIn: 'root',
@@ -27,17 +27,25 @@ export class AuthService {
       .pipe(catchError(this.handleError));
   }
 
+  register(obj: registerRequest) {
+    return this.http
+      .post<authResponse>(registerUrl, obj, { observe: 'response' })
+      .pipe(catchError(this.handleError));
+  }
+
+  logout() {
+    return this.http
+      .post(logoutUrl, '')
+      .pipe(catchError(this.handleError));
+  }
+
   setToken(token: string) {
     localStorage.setItem('token', token);
   }
   getToken(): string {
     return localStorage.getItem('token') || '';
   }
-  logout() {
-    return this.http
-      .post(logoutUrl, '')
-      .pipe(catchError(this.handleError));
-  }
+
 
   isloggedIn(): boolean {
     const token: string = this.getToken();
